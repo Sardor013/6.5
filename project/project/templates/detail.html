@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+
+<img src="{{ Book.image.url }}"/><br>
+Name: {{ Book.name }}<br>
+Description: {{ Book.description }}<br>
+Price: {{ Book.price }}<br>
+Year: {{ Book.year }}<br>
+Category: {{ Book.book_category }}<hr/>
+
+<a href="{% url 'project:get_info' %}" >Home</a><br>
+<a href="{% url 'project:update_book' Book.pk %}" >Update</a><br>
+<a href="{% url 'project:delete_book' Book.pk %}" >Delete</a><br>
+
+</body>
+</html>

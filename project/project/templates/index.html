@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+   <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  font-family: "Roboto", sans-serif;
+}
+
+.wrap1 {
+  text-align: center;
+}
+
+.header-heading {
+  color: rgb(64, 248, 23);
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.header-context {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.c-btn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background-color: #1f4aa8;
+  border-radius: 39px;
+  text-decoration: none;
+}
+
+.header-category {
+  text-decoration: none;
+  color: #ffffff;
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+}
+.header-btn {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ffffff;
+  background-color: #1fa848;
+  border-radius: 39px;
+  text-decoration: none;
+}
+
+.c-btn:hover,
+.header-btn:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.c-btn:active,
+.header-btn:active {
+  transform: scale(0.95);
+}
+.header-link{
+  padding: 50px;
+}
+.wrap3{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  grid-column: 1;
+}
+.wrap2{
+  /* margin-top: -120%;
+margin-left: 190px; */
+}
+</style>
+    <div class="wrap1">
+      <h1 class="header-heading">Home page</h1>
+    </div>
+    <div class="wrap3">
+          <h3 class="header-context">Categories</h3>
+          {% for c in Category %}
+          <button class="c-btn">
+            <a class=" header-link" href="{% url 'project:get_book' c.pk %}" >{{ c.name }}</a><br>
+          </button>
+          {% endfor %}
+        </div>
+        
+        <div class="wrap2">
+          <button class="header-btn">
+              <a class="header-link" href="{% url 'project:add_book' %}" >Add Books</a><br>
+          </button>
+        </div>
+
+ 
+
+</body>
+</html>
